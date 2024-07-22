@@ -1,0 +1,107 @@
+
+## Set the PoMS colours
+LU_colours <- c(
+ "brown" <- "#4f2b17",
+"lightbrown" <- "#805921",
+"orange" <- "#e87321",
+"lightorange" <- "#f7b01c",
+"yellow" <- "#ffd63d"
+)
+
+#' Function to extract Lund university colours as hex codes
+#'
+#' @param ... Character names of Lu_colours
+#'
+LU_cols <- function(...) {
+    cols <- c(...)
+
+    if (is.null(cols))
+        return(LU_colours)
+
+    LU_colours[cols]
+}
+
+
+LU_palettes <- list(
+    `main` = LU_cols("brown", "lightbrown"),
+    `secondary` = LU_cols("orange", "lightorange", "yellow"),
+    `both` = LU_cols("brown", "lightbrown", "orange", "lightorange", "yellow")
+    # `grey` = LU_cols("grey", "dark", "stone50", "dark50", "stone25", "dark25"),
+    # `dark` = LU_cols("blue", "red", "dark"),
+    # `all` = LU_cols("blue", "red", "skyblue", "orange", "vermillion", "turquoise", "reddish", "yellow", "purple", "green", "grey", "dark")
+)
+
+
+#' Return function to interpolate a Lund university colour palette
+#'
+#' @param palette Character name of palette in LU_palettes ("main", "secondary",
+#'   "both", "grey", "dark", "all").
+#' @param reverse Boolean indicating whether the palette should be reversed.
+#' @param ... Additional arguments to pass to colorRampPalette().
+#' @import grDevices
+#'
+LU_pals <- function(palette = "both", reverse = FALSE, ...) {
+    pal <- LU_palettes[[palette]]
+
+    if (reverse) pal <- rev(pal)
+
+    grDevices::colorRampPalette(pal, ...)
+
+}
+
+
+#' Color scale constructor for PoMS  colors
+#'
+#' @param palette Character name of palette in LU_palettes ("main", "secondary",
+#'   "both", "grey", "dark", "all").
+#' @param discrete Boolean indicating whether color aesthetic is discrete or
+#'   not.
+#' @param reverse Boolean indicating whether the palette should be reversed.
+#' @param ... Additional arguments passed to discrete_scale() or
+#'   scale_color_gradientn(), used respectively when discrete is TRUE or FALSE
+#'
+#' @import ggplot2
+#' @details The palette is made up of the different colors from the graphical profile of Lund university. The choices are:
+#' \itemize{
+#'    \item main - the main blue and bronze colours (can be used for first and secondary headings).
+#'    \item secondary - the colours that are not main or grey.
+#'    \item both - both the main and secondary colours.
+#'    \item grey - The grey colours used by Lund university (mainly for headings and, ingress and main texts)
+#'    \item dark - The blue, bronze and darker shade of grey.
+#'    \item all - Use all the colours (default).
+#'  }
+#' @export
+scale_colour_RestPoLL <- function(palette = "secondary", discrete = TRUE, reverse = FALSE, ...) {
+    pal <- LU_pals(palette = palette, reverse = reverse)
+  #pal <- LU_palettes[[palette]]
+
+  #if (reverse) pal <- rev(pal)
+
+    if (discrete) {
+        ggplot2::discrete_scale("colour", paste0("LU_", palette), palette = pal, ...)
+    } else {
+        ggplot2::scale_color_gradientn(colours = pal(256), ...)
+    }
+}
+
+#' Fill scale constructor for PoMS colours
+#'
+#' @param palette Character name of palette in LU_palettes ("main", "secondary",
+#'   "both", "grey", "dark", "all").
+#' @param discrete Boolean indicating whether colour aesthetic is discrete or
+#'   not.
+#' @param reverse Boolean indicating whether the palette should be reversed.
+#' @param ... Additional arguments passed to discrete_scale() or
+#'   scale_fill_gradientn(), used respectively when discrete is TRUE or FALSE.
+#' @import ggplot2
+#' @export
+#'
+scale_fill_RestPoLL <- function(palette = "secondary", discrete = TRUE, reverse = FALSE, ...) {
+    pal <- LU_pals(palette = palette, reverse = reverse)
+
+    if (discrete) {
+        ggplot2::discrete_scale("fill", paste0("LU_", palette), palette = pal, ...)
+    } else {
+        ggplot2::scale_fill_gradientn(colours = pal(256), ...)
+    }
+}
