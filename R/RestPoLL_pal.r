@@ -13,7 +13,7 @@
 #'
 RestPoLL_pal <- function(palette = "both") {
 
-    name <-  LU_palettes[[palette]]
+    name <-  restpoll_palettes[[palette]]
 
     image(1:length(name), 1, as.matrix(1:length(name)), col = name,
           xlab = paste("The ",palette, " palett colours"), ylab = "", xaxt = "n",
