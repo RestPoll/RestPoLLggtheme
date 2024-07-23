@@ -25,7 +25,7 @@
 #'
 #' @examples
 #'    library(ggplot2)
-#'    library(RetPoLLggtheme)
+#'    library(RestPoLLggtheme)
 #'
 #'    p1 <- ggplot(diamonds, aes(carat, price, color = color)) +
 #'      geom_point() +
@@ -217,79 +217,3 @@ theme_RestPoLL <- function(base_size = 22, base_family = "Arial", title_size = 2
     complete = TRUE # this states if the theme is a complete theme. It will then inherit from blank elements, and behave a bit differently when added to ggplot objects.
   )
 }
-
-
-#'@inherit theme_RestPoLL
-#' @details \code{theme_LU_presentation} sets the theme for official Lund university figures,
-#'   using the graphical profile colours in the figure plot area, gridline,
-#'   axis, facets etc. You can change the size and font family of the basic text, title and subtitle
-#'   directly in the theme function. The presentation theme is suited for presentations and posters where there usually are titles already before the figure. The title and subtitle uses the same font family and colour.
-#' @usage theme_LU_presentation(base_size = 15, base_family = "Arial", title_size = 22, title_family = "Times New Roman", subtitle_size = 20, subtitle_family = "Times New Roman")
-#' @param title_family Font family for the titles. Including plot title, subtitle as
-#'   well as the facet strip titles.
-#' @examples
-#'    library(ggplot2)
-#'    library(PoMSggtheme)
-#'
-#'    p1 <- ggplot(diamonds, aes(carat, price, color = color)) +
-#'      geom_point() +
-#'      facet_wrap(~cut) +
-#'      labs(title = "Test of the Lund theme", subtitle = "I hope it works well")
-#'
-#'    p1 + theme_LU_presentation()
-#'@noRd
-#'
-# theme_LU_presentation <- function(base_size = 15, base_family = "Arial", title_size = 22, title_family = "Times New Roman", subtitle_size = 20, subtitle_family = "Times New Roman") {
-#
-#
-#   # sets the colours for the different elements.
-#   lutextcol = "#4d4c44" # Text colours #dark grey
-#
-#   theme_LU_article(base_size = base_size, base_family = base_family, title_size = title_size, title_family = title_family, subtitle_size = subtitle_size, subtitle_family = subtitle_family) %+replace% ## Just replace the differences to theme_LU_article
-#     ggplot2::theme(
-#       #Title formats:
-#       #This sets the font, size, type and colour of text for the chart's title
-#       plot.title = ggplot2::element_text(family = title_family,
-#                                          size = title_size,
-#                                          face = "plain",
-#                                          colour = lutextcol,
-#                                          hjust = 0,
-#                                          vjust = 1,
-#                                          margin = ggplot2::margin(0,0,b = base_size*0.5,0)),
-#       #This sets the font, size, type and colour of text for the chart's subtitle, as well as setting a margin between the title and the subtitle
-#       plot.subtitle = ggplot2::element_text(family = subtitle_family,
-#                                             size = subtitle_size,
-#                                             face = "plain",
-#                                             colour = lutextcol,
-#                                             hjust = 0,
-#                                             vjust = 1,
-#                                             margin = ggplot2::margin(0,0,b = base_size*0.5,0))
-#       )
-# }
-#
-
-##IDEA: To make the titles in capital letters if you add the theme last.
-
-# ggplot_add.my_theme <- function(object, plot, object_name){
-#   plot$theme <- ggplot2:::update_theme(plot$theme, object)
-#   plot$labels$title <- stringr::str_to_upper(plot$labels$title)
-#   plot
-# }
-#
-# new_theme <- function(){
-#
-#   out <- theme(plot.title = element_text(face = "bold"))
-#
-#   class(out) <- c("my_theme", class(out))
-#
-#   return(out)
-# }
-
-
-# works
-# ggplot(mtcars, aes(mpg, hp)) +
-#   geom_point() +
-#   labs(
-#     title = "My plot title"
-#   ) +
-#   new_theme()

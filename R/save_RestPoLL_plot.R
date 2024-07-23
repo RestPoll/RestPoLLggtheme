@@ -4,30 +4,29 @@
 #' Running this function with the plot name as variable will save your plot with
 #' some extra styling. It will add Arial as text font except the subtitle, which
 #' will be in Times New Roman. It will also left align your title, subtitle and
-#' source, add and optional Lund university logo in the top right, and save it to your
-#' specified location. Optionally it can add a logo at the bottom right.
+#' source, add and optional RestPoLL logo in the top right, and save it to your
+#' specified location.
 #'
-#' @usage save_restpoll_plot(save_filepath = "FigX.png", plot = last_plot(),
-#'  source_name = "This project receives funding from the European\n
-#'  Union’s Horizon Europe Framework Programme\n
-#'  under project No. 101082101.",
-#'  width = 9, height = 6,
-#'  logo_image_path = "", LU_logo = "")
 #'
-#' @param save_filepath Exact file-path that you want the plot to be saved to, or just
-#' the name of the file. Default file-path is the working directory
-#' @param plot The name of the plot (saved in an object) you have created that you want
-#'   to format and save. By default it saves the last plot made.
+#' @param save_filepath Exact file-path that you want the plot to be saved to,
+#'   or just the name of the file. Default file-path is the working directory
+#' @param plot The name of the plot (saved in an object) you have created that
+#'   you want to format and save. By default it saves the last plot made.
 #' @param source_name The text you want to come after the text 'Source:' in the
-#'   bottom left hand side of your side.
-#' @param width Width in inches that you want to save your chart to -
-#'   defaults to 9.
-#' @param height Height in inches that you want to save your chart to -
-#'   defaults to 6.
+#'   bottom left hand side of your side. Defaults to the funding text of EU
+#'   Horizon project
+#' @param width Width in inches that you want to save your chart to - defaults
+#'   to 9.
+#' @param height Height in inches that you want to save your chart to - defaults
+#'   to 6.
 #' @param logo_image_path File path for the logo image you want to use in the
-#'   bottom right of your chart, which needs to be a PNG file - defaults
-#'   to a placeholder image with the same colour as the plot area.
-#' @param RestPoLL_logo File path to the top right logo - defaults to a placeholder image of background colour. It can also be set to the Swedish or English version by setting it to \code{Lund_sv.png} and \code{Lund_en.png}. There are also logos from different faculties in both Swedish and English. However, you can not add a path to your own Logo. Use \code{logo_image_path} for that. See \code{Section Lund Logos} for possible options.
+#'   bottom left of your chart, which needs to be a PNG file - defaults to a
+#'   EU-flag image.
+#' @param RestPoLL_logo File path to the top right logo - defaults to a
+#'   placeholder image of background colour. There are different logos in colour
+#'   and black and white. However, you can not add a path to your own Logo. Use
+#'   \code{logo_image_path} for that. See \code{Section RestPoLL Logos} for
+#'   possible options.
 #' @import grid
 #' @import ggplot2
 #' @import png
@@ -40,8 +39,8 @@
 #'@details The function is a modified version of a finalise_plot function from
 #'  the bbplot package made by the BBC data team.
 #'  \url{https://github.com/bbc/bbplot}
-#' @section Lund logos:
-#'  Here is the list of possible choices for the Lund university logo:
+#' @section RestPoLL logos:
+#'  Here is the list of possible choices for the RestPoLL logo:
 #'  \itemize{
 #'    \item Restpoll.png - The RestPoLL logo in colour, text under.
 #'    \item Restpoll-bw.png - The RestPoLL logo in black and white, text under.
@@ -59,7 +58,6 @@
 #'              height = 6,
 #'              logo_image_path = "my_logo.png",
 #'              RestPoLL_logo = "Restpoll.png")
-#' }
 #'
 #'library(ggplot2)
 #' myplot <- ggplot(iris, aes(Petal.Length, Sepal.Length)) +
@@ -72,6 +70,8 @@
 #'              source_name = "Source: Iris data",
 #'              width = 9,
 #'              height = 6)
+#'
+#' }
 #'
 #'@export
 
