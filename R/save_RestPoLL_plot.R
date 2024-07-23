@@ -7,8 +7,11 @@
 #' source, add and optional Lund university logo in the top right, and save it to your
 #' specified location. Optionally it can add a logo at the bottom right.
 #'
-#' @usage save_poms_plot(save_filepath = "FigX.png", plot = last_plot(),
-#'  source_name = "Source: Lund University", width = 9, height = 6,
+#' @usage save_restpoll_plot(save_filepath = "FigX.png", plot = last_plot(),
+#'  source_name = "This project receives funding from the European\n
+#'  Union’s Horizon Europe Framework Programme\n
+#'  under project No. 101082101.",
+#'  width = 9, height = 6,
 #'  logo_image_path = "", LU_logo = "")
 #'
 #' @param save_filepath Exact file-path that you want the plot to be saved to, or just
@@ -22,9 +25,9 @@
 #' @param height Height in inches that you want to save your chart to -
 #'   defaults to 6.
 #' @param logo_image_path File path for the logo image you want to use in the
-#'   top bottom right of your chart, which needs to be a PNG file - defaults
+#'   bottom right of your chart, which needs to be a PNG file - defaults
 #'   to a placeholder image with the same colour as the plot area.
-#' @param LU_logo File path to the top right logo - defaults to a placeholder image of background colour. It can also be set to the Swedish or English version by setting it to \code{Lund_sv.png} and \code{Lund_en.png}. There are also logos from different faculties in both Swedish and English. However, you can not add a path to your own Logo. Use \code{logo_image_path} for that. See \code{Section Lund Logos} for possible options.
+#' @param RestPoLL_logo File path to the top right logo - defaults to a placeholder image of background colour. It can also be set to the Swedish or English version by setting it to \code{Lund_sv.png} and \code{Lund_en.png}. There are also logos from different faculties in both Swedish and English. However, you can not add a path to your own Logo. Use \code{logo_image_path} for that. See \code{Section Lund Logos} for possible options.
 #' @import grid
 #' @import ggplot2
 #' @import png
@@ -33,56 +36,38 @@
 #' @return A png file with a styled and updated ggplot chart. Also returns the
 #'   plot object.
 
-#'@keywords save_poms_plot
+#'@keywords save_restpoll_plot
 #'@details The function is a modified version of a finalise_plot function from
 #'  the bbplot package made by the BBC data team.
 #'  \url{https://github.com/bbc/bbplot}
 #' @section Lund logos:
 #'  Here is the list of possible choices for the Lund university logo:
 #'  \itemize{
-#'    \item Lund_sv.png - Lund University logo; Swedish.
-#'    \item Lund_en.png - Lund University logo; English
-#'    \item NatVet_sv.png - Lund Faculty of Science logo; Swedish
-#'    \item NatVet_en.png - Lund Faculty of Science logo; English
-#'    \item SamhVet_sv.png - Lund Faculty of social sciences logo; Swedish
-#'    \item SamhVet_en.png - Lund Faculty of social sciences logo; English
-#'    \item CEC_sv.png - Centre for Environmental and Climate Science logo; Swedish
-#'    \item CEC_en.png - Centre for Environmental and Climate Science logo; English
-#'    \item MedFak_sv.png - Lund Faculty of Medicine logo; Swedish
-#'    \item MedFak_en.png - Lund Faculty of Medicine logo; English
-#'    \item HumTeoFak_sv.png - Lund Joint Faculties of Humanities and Theology logo; Swedish
-#'    \item HumTeoFak_en.png - Lund Joint Faculties of Humanities and Theology logo; English
-#'    \item JurFak_sv.png - Lund Faculty of Law logo; Swedish
-#'    \item JurFak_en.png - Lund Faculty of Law logo; English
-#'    \item LTH_sv.png - Lund Faculty of Engineering logo; Swedish
-#'    \item LTH_en.png - Lund Faculty of Engineering logo; English
-#'    \item Teater_sv.png - Malmö Theatre Academy logo; Swedish
-#'    \item Teater_en.png - Malmö Theatre Academy logo; English
-#'    \item KonstHS_sv.png - Malmö Art Academy logo; Swedish
-#'    \item KonstHS_en.png - Malmö Art Academy logo; English
-#'    \item MusikHS_sv.png - Malmö Academy of Music logo; Swedish
-#'    \item MusikHS_en.png - Malmö Academy of Music logo; English
-#'    \item EkoHS_sv.png - Lund School of Economics and Management logo; Swedish
-#'    \item EkoHS_en.png - Lund School of Economics and Management logo; English
+#'    \item Restpoll.png - The RestPoLL logo in colour, text under.
+#'    \item Restpoll-bw.png - The RestPoLL logo in black and white, text under.
+#'    \item Restpoll-long.png - The RestPoLL logo in colour, text to the right.
+#'    \item Restpoll-long-bw.png - The RestPoLL logo in black and white, text to the right.
+#'    \item Restpoll-notext.png - The RestPoLL logo in colour, without text.
+#'    \item Restpoll-notext-bw.png - The RestPoLL logo in black and white, without text.
 #'     }
 #' @examples
 #' \dontrun{
-#' save_poms_plot(save_filepath = "filename_that_my_plot_should_be_saved_to.png",
+#' save_restpoll_plot(save_filepath = "filename_that_my_plot_should_be_saved_to.png",
 #'              plot = last_plot(),
 #'              source_name = "Source: The source for my data",
 #'              width = 9,
 #'              height = 6,
 #'              logo_image_path = "my_logo.png",
-#'              LU_logo = "CEC_en.png")
+#'              RestPoLL_logo = "Restpoll.png")
 #' }
 #'
 #'library(ggplot2)
 #' myplot <- ggplot(iris, aes(Petal.Length, Sepal.Length)) +
 #'    geom_point() +
 #'    facet_wrap(~Species) +
-#'    theme_PoMS()
+#'    theme_RestPoLL()
 #'
-#' save_poms_plot(save_filepath = "Iris_facets.png",
+#' save_restpoll_plot(save_filepath = "Iris_facets.png",
 #'              plot = myplot,
 #'              source_name = "Source: Iris data",
 #'              width = 9,
@@ -90,16 +75,13 @@
 #'
 #'@export
 
-# TODO: make it possible to chose different sub-logos (samhällsvet, ekonomi, lth etc)
-# IDEA: Use svg instead of png (or both) in logos
-
-save_poms_plot <- function(save_filepath = "FigX.png",
+save_restpoll_plot <- function(save_filepath = "FigX.png",
                          plot = last_plot(),
-                         source_name = "Source: RestPoLL",
+                         source_name = "This project receives funding from the European Union's\nHorizon Europe Framework Programme under project No. 101082101.",
                          width = 9,
                          height = 6,
-                         logo_image_path = file.path(system.file("logos", package = "RestPoLLggtheme"), "placeholder.png"),
-                         LU_logo = "placeholderL.png"
+                         logo_image_path = file.path(system.file("logos", package = "RestPoLLggtheme"), "EU-flag.png"),
+                         RestPoLL_logo = "placeholderL.png"
 ) {
 
   ## THE FOLLOWING FUNCTIONS TAKE CARE OF THE FINALISING OF THE PLOT
@@ -113,14 +95,14 @@ save_poms_plot <- function(save_filepath = "FigX.png",
   }
 
   # Add a footer with logos
-  create_footer <- function(source_name, logo_image_path, LU_logo) {
+  create_footer <- function(source_name, logo_image_path, RestPoLL_logo) {
 
-    LU_logo <- file.path(system.file("logos", package = "RestPoLLggtheme"), LU_logo)
+    RestPoLL_logo <- file.path(system.file("logos", package = "RestPoLLggtheme"), RestPoLL_logo)
 
     footer <- grid::grobTree(grid::linesGrob(x = grid::unit(c(0, 1), "npc"), y = grid::unit(1.1, "npc")), # The line at the bottom of figure
-                             grid::textGrob(source_name, x = 0.004, hjust = 0, gp = grid::gpar(fontsize = 14)), # The Source text under the line
-                             grid::rasterGrob(png::readPNG(logo_image_path), x = 0.92, height = 1.0), # The personal logo, placed in the bottom right.
-                             grid::rasterGrob(png::readPNG(LU_logo), x = 0.890 - log(width)^-11.97, y = height / 0.2847222, height = 2.9)) # The Lund University logo image placed at the top right. Orig x,y values x = 0.955, y = 21.47. They did not scale to different plot sizes.
+                             grid::textGrob(source_name, x = 0.043, hjust = 0, gp = grid::gpar(fontsize = 6)), # The Source text under the line to the botom left
+                             grid::rasterGrob(png::readPNG(logo_image_path), x = 0.02, height = 1.0), # The personal logo, placed in the bottom left.
+                             grid::rasterGrob(png::readPNG(RestPoLL_logo), x = 0.99 - log(width)^-11.97, y = height / 0.281, height = 2.1, hjust = 1)) # The RestPoLL logo image placed at the top right. Orig x,y values x = 0.955, y = 21.47. They did not scale to different plot sizes.
     return(footer)
   }
 
@@ -135,7 +117,7 @@ save_poms_plot <- function(save_filepath = "FigX.png",
   ## NEXT WE USE THE FUNCTIONS TO FINALISE AND SAVE THE PLOT.
 
   #Make the footer
-  footer <- create_footer(source_name, logo_image_path, LU_logo)
+  footer <- create_footer(source_name, logo_image_path, RestPoLL_logo)
 
 
   #Draw your left-aligned grid
