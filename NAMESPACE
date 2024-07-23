@@ -2,7 +2,7 @@
 
 export(RestPoLL_pal)
 export(import_fonts)
-export(save_poms_plot)
+export(save_restpoll_plot)
 export(scale_colour_RestPoLL)
 export(scale_fill_RestPoLL)
 export(theme_RestPoLL)

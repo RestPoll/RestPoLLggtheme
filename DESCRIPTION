@@ -1,21 +1,20 @@
 Package: RestPoLLggtheme
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
+Title: Add Theme with RestPoLL Colour Scheme to ggplot2 Figures
+Version: 0.1.2
 Author: c(person(given="Georg", family="Andersson", 
       email="georg.andersson@biol.lu.se",
       role = c("aut", "cre"), 
       comment = c(ORCID = "https://orcid.org/0000-0002-9669-6895"))
 Maintainer: <georg.andersson@biol.lu.se>
 Description:
-    The package adds a theme for ggplot2() with the PoMS colours
-    and some agreed upon look for figures used by the PoMS project.
-    It is called theme_PoMS() and is added as other themes in the end of your
-    ggplot functions. The package also includes a save_poms_plot function that finalise
-    and saves the plot. This includes adding an optional Lund university logo at the top 
-    right corner. Furthermore, it adds a footer with an Source for the 
-    plot, and an optional logo in the bottom right corner.
-    Use four spaces when indenting paragraphs within the Description.
+    The package adds a theme for ggplot2() with the RestPoLL colours
+    and some agreed upon look for figures used by the RestPoLL project.
+    It is called theme_RestPoLL() and is added as other themes in the end of your
+    ggplot functions. The package also includes a save_restpoll_plot function
+    that finalise and saves the plot. This includes adding an optional RestPoLL logo
+    at the top right corner. Furthermore, it adds a footer with a European flag
+    and EU-funding text in the bottom right corner.
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
