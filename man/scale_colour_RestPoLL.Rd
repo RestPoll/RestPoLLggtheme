@@ -13,7 +13,7 @@ scale_colour_RestPoLL(
 }
 \arguments{
 \item{palette}{Character name of palette in LU_palettes ("main", "secondary",
-"both", "grey", "dark", "all").}
+"both").}
 
 \item{discrete}{Boolean indicating whether color aesthetic is discrete or
 not.}
