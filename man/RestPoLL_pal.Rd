@@ -2,7 +2,7 @@
 % Please edit documentation in R/RestPoLL_pal.r
 \name{RestPoLL_pal}
 \alias{RestPoLL_pal}
-\title{Shows the PoMS Palette Colours}
+\title{Shows the RestPoLL Palette Colours}
 \usage{
 RestPoLL_pal(palette = "both")
 }
@@ -16,6 +16,6 @@ A colour map with respective Hex names
 Show the colours with the Hex colour names of the given palette.
 }
 \examples{
-PoMS_pal(palette = "main")
+RestPoLL_pal(palette = "main")
 
 }

@@ -15,7 +15,7 @@ The RestPoLLggtheme package provides three categories of important functions:
 
 \section{\code{save} function}{
 
-  There is also a save function \code{save_RestPoLL_plot} which not only saves the plot as a png but further style the plot. See \code{\link{save_RestPoLL_plot}} for more details.
+  There is also a save function \code{save_restpoll_plot} which not only saves the plot as a png but further style the plot. See \code{\link{save_restpoll_plot}} for more details.
 }
 
 \section{\code{scale} functions}{

@@ -36,7 +36,7 @@ This function allows you to add the RestPoLL theme to your ggplot graphics.
 }
 \examples{
    library(ggplot2)
-   library(RetPoLLggtheme)
+   library(RestPoLLggtheme)
 
    p1 <- ggplot(diamonds, aes(carat, price, color = color)) +
      geom_point() +
