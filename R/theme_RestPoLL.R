@@ -5,7 +5,7 @@
 #' @details \code{theme_RestPoLL} sets the theme for RestPoLL figures,
 #'   using the graphical profile colours in the figure plot area, gridline,
 #'   axis, facets etc. You can change the size and font family of the basic text, title and subtitle
-#'   directly in the theme function. The article theme is pre-set to suit articles with a bold title in bronze colour.
+#'   directly in the theme function.
 
 #' @author Georg Andersson, Biodiversity, Lund University
 #' @usage theme_RestPoLL(base_size = 22, base_family = "Arial",
@@ -18,8 +18,8 @@
 #' @param title_family Font family for the titles. Including plot title, as
 #'   well as the facet strip titles. However, not for subtitle.
 #' @param subtitle_family Font family for the subtitle.
-#' @return Returns the plot object made with your \link{ggplot2} functions but styled for Pollinator monitoring at LU
-#' @keywords theme_PoMS
+#' @return Returns the plot object made with your \link{ggplot2} functions but with the RestPoLL style.
+#' @keywords theme_RestPoLL
 #' @import ggplot2
 #' @seealso \code{\link{ggplot2}}
 #'
@@ -30,7 +30,7 @@
 #'    p1 <- ggplot(diamonds, aes(carat, price, color = color)) +
 #'      geom_point() +
 #'      facet_wrap(~cut) +
-#'      labs(title = "Test of the Lund theme", subtitle = "I hope it works well")
+#'      labs(title = "Test of the RestPoLL theme", subtitle = "I hope it works well")
 #'
 #'    p1 + theme_RestPoLL()
 #'
