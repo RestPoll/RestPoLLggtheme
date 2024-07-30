@@ -28,10 +28,10 @@ Then use `remotes` to install the theme package:
 
 ## Usage
 
-The package come with the ordinary help files and with all functions you can find some usage help in the usual R way.
+The package come with the ordinary help files and for all functions you can find some usage help in the usual R way.
 For example to find help on the `theme_RestPoLL()` write `?theme_RestPoLL`.
 
-After a ggplot call you can specify the `theme_RestPoLL()`. In the theme you can set the *base*, *title*, and *subtitle* text size and font. See **Examples** below.
+After a ggplot call you can specify the `theme_RestPoLL()`. In the theme you can set the *base*, *title*, and *subtitle* text size and fontfamily. See **Examples** below.
 
 You can also specify `scale_colour_RestPoLL()`and `scale_fill_RestPoLL()` to get colour schemes on e.g. points, lines and bars.
 
@@ -69,7 +69,7 @@ For known issues see **Known Issues** below.
 
 ### Fonts
 
-This version now use `showtext` package to handle text families and hopefully this will solve some of the font issues.
+This version use `showtext` package to handle text families and hopefully this will solve some of the font issues.
 
 
 ### Logos
