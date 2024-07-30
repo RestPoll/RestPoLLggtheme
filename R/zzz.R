@@ -11,7 +11,7 @@
 #' @return Load fonts for widows device and pdf device
 #'
 .onAttach <- function(libname, pkgname) {
-    packageStartupMessage("Loading RestPoLLggtheme version: ", getNamespaceVersion('RestPoLLggtheme'), "\n\nLoading available fonts for this session.\n\nYou can install fonts from this package with:\n 'import_fonts()' - Arial and Times New Roman\n\nYou can use them with e.g:\n theme_RestPoLL(base_family = 'Arial', title_family = 'Times New Roman')")
+    packageStartupMessage("Loading RestPoLLggtheme version: ", getNamespaceVersion('RestPoLLggtheme'), "\n\nLoading available fonts for this session.\n\nYou can install fonts from this package with:\n 'import_fonts()' - Arial, Times New Roman, and Lora\n\nYou can use them with e.g:\n theme_RestPoLL(base_family = 'Arial', title_family = 'Lora')")
 }
 
 .onLoad <- function(libname, pkgname) {

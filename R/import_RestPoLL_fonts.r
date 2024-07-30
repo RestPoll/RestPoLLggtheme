@@ -23,9 +23,13 @@ import_fonts <- function() {
 
     suppressWarnings(suppressMessages(extrafont::font_import(arial_font_dir, prompt = FALSE)))
 
+    lora_font_dir <- system.file("fonts", "lora", package = "RestPoLLggtheme")
+
+    suppressWarnings(suppressMessages(extrafont::font_import(lora_font_dir, prompt = FALSE)))
+
     message(
-        sprintf("\nThe fonts Times New Roman and Arial is installed for R.\nYou will likely need to install these fonts on your system as well.\n\nYou can find the fonts in:\n [%s]\nand:\n [%s]",
-            times_font_dir, arial_font_dir)
+        sprintf("\nThe fonts Times New Roman, Arial, and Lora is installed for R.\nYou will likely need to install these fonts on your system as well.\n\nYou can find the fonts in:\n [%s],\n [%s]\n and:\n[%s]",
+            times_font_dir, arial_font_dir, lora_font_dir)
     )
 
 }
