@@ -11,7 +11,7 @@
 #' @usage theme_RestPoLL(base_size = 22, base_family = "Arial",
 #'    title_size = 28, title_family = "Arial", subtitle_size = 24,
 #'    subtitle_family = "Arial")
-#' @param base_size Font size
+#' @param base_size Font size for the basix text.
 #' @param base_family Font family for the basic text.
 #' @param title_size Font size of plot title.
 #' @param subtitle_size Font size of plot subtitle.
@@ -171,7 +171,7 @@ theme_RestPoLL <- function(base_size = 22, base_family = "Arial", title_size = 2
     #This sets the font, size, type and colour of text for the chart's title
     plot.title = ggplot2::element_text(family = title_family,
                                        size = title_size,
-                                       face = "plain",
+                                       face = "bold",
                                        colour = lutitcolour,
                                        hjust = 0,
                                        vjust = 1,
