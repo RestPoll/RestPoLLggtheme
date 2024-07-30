@@ -22,9 +22,13 @@ The package can be downloaded from the [***RestPoLL GitHub***](https://github.co
 
 To install the package in R one first needs `remotes` which can be installed from **CRAN**; `install.package('remotes')`.
 
+
+You will for the moment also need a *personal access token* with at least `repo` scope filled in. You can get that at:
+[https://github.com/settings/tokens](https://github.com/settings/tokens)
+
 Then use `remotes` to install the theme package:
 
-`remotes::install_gitlab('RestPoLL/RestPoLLggtheme')`
+`remotes::install_github('RestPoLL/RestPoLLggtheme', auth_token = "your token")`
 
 ## Usage
 
