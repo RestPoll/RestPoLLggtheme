@@ -25,5 +25,7 @@ Imports:
     ggpubr,
     grid,
     png,
+    grDevices,
     extrafont,
-    grDevices
+    sysfonts,
+    showtext
