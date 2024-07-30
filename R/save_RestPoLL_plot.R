@@ -100,8 +100,8 @@ save_restpoll_plot <- function(save_filepath = "FigX.png",
     RestPoLL_logo <- file.path(system.file("logos", package = "RestPoLLggtheme"), RestPoLL_logo)
 
     footer <- grid::grobTree(grid::linesGrob(x = grid::unit(c(0, 1), "npc"), y = grid::unit(1.1, "npc")), # The line at the bottom of figure
-                             grid::textGrob(source_name, x = 0.043, hjust = 0, gp = grid::gpar(fontsize = 6)), # The Source text under the line to the botom left
-                             grid::rasterGrob(png::readPNG(logo_image_path), x = 0.02, height = 1.0), # The personal logo, placed in the bottom left.
+                             grid::textGrob(source_name, x = 0.048, hjust = 0, gp = grid::gpar(fontsize = 8)), # The Source text under the line to the botom left
+                             grid::rasterGrob(png::readPNG(logo_image_path), x = 0.02, height = 1.2), # The personal logo, placed in the bottom left.
                              grid::rasterGrob(png::readPNG(RestPoLL_logo), x = 0.99 - log(width)^-11.97, y = height / 0.281, height = 2.1, hjust = 1)) # The RestPoLL logo image placed at the top right. Orig x,y values x = 0.955, y = 21.47. They did not scale to different plot sizes.
     return(footer)
   }
