@@ -1,7 +1,7 @@
 Package: RestPoLLggtheme
 Type: Package
 Title: Add Theme with RestPoLL Colour Scheme to ggplot2 Figures
-Version: 0.1.3
+Version: 0.1.4
 Author: c(person(given="Georg", family="Andersson", 
       email="georg.andersson@biol.lu.se",
       role = c("aut", "cre"), 
