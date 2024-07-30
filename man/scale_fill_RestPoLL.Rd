@@ -2,7 +2,7 @@
 % Please edit documentation in R/scale_colours_RestPoLL.R
 \name{scale_fill_RestPoLL}
 \alias{scale_fill_RestPoLL}
-\title{Fill scale constructor for PoMS colours}
+\title{Fill Scale constructor for RestPoLL Colours}
 \usage{
 scale_fill_RestPoLL(
   palette = "secondary",
@@ -12,10 +12,10 @@ scale_fill_RestPoLL(
 )
 }
 \arguments{
-\item{palette}{Character name of palette in LU_palettes ("main", "secondary",
-"both", "grey", "dark", "all").}
+\item{palette}{Character name of palette in RestPoLL palettes ("main", "secondary",
+"both"). Show colours of the palettes with `RestPoLL_pal()`.}
 
-\item{discrete}{Boolean indicating whether colour aesthetic is discrete or
+\item{discrete}{Boolean indicating whether color aesthetic is discrete or
 not.}
 
 \item{reverse}{Boolean indicating whether the palette should be reversed.}
@@ -24,5 +24,5 @@ not.}
 scale_fill_gradientn(), used respectively when discrete is TRUE or FALSE.}
 }
 \description{
-Fill scale constructor for PoMS colours
+Fill Scale constructor for RestPoLL Colours
 }

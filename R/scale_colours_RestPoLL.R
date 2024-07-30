@@ -50,10 +50,10 @@ restpoll_pals <- function(palette = "both", reverse = FALSE, ...) {
 }
 
 
-#' Color scale constructor for PoMS  colors
+#' Color Scale Constructor for RestPoLL Colors
 #'
-#' @param palette Character name of palette in LU_palettes ("main", "secondary",
-#'   "both").
+#' @param palette Character name of palette in RestPoLL palettes ("main", "secondary",
+#'   "both"). Show colours of the palettes with `RestPoLL_pal()`.
 #' @param discrete Boolean indicating whether color aesthetic is discrete or
 #'   not.
 #' @param reverse Boolean indicating whether the palette should be reversed.
@@ -61,14 +61,12 @@ restpoll_pals <- function(palette = "both", reverse = FALSE, ...) {
 #'   scale_color_gradientn(), used respectively when discrete is TRUE or FALSE
 #'
 #' @import ggplot2
-#' @details The palette is made up of the different colors from the graphical profile of Lund university. The choices are:
+#' @details The palette is made up of the different colors from the graphical profile of
+#'   the RestPoLL project. The choices are:
 #' \itemize{
 #'    \item main - the main blue and bronze colours (can be used for first and secondary headings).
 #'    \item secondary - the colours that are not main or grey.
 #'    \item both - both the main and secondary colours.
-#'    \item grey - The grey colours used by Lund university (mainly for headings and, ingress and main texts)
-#'    \item dark - The blue, bronze and darker shade of grey.
-#'    \item all - Use all the colours (default).
 #'  }
 #' @export
 scale_colour_RestPoLL <- function(palette = "secondary", discrete = TRUE, reverse = FALSE, ...) {
@@ -84,13 +82,9 @@ scale_colour_RestPoLL <- function(palette = "secondary", discrete = TRUE, revers
   }
 }
 
-#' Fill scale constructor for PoMS colours
+#' Fill Scale constructor for RestPoLL Colours
 #'
-#' @param palette Character name of palette in LU_palettes ("main", "secondary",
-#'   "both", "grey", "dark", "all").
-#' @param discrete Boolean indicating whether colour aesthetic is discrete or
-#'   not.
-#' @param reverse Boolean indicating whether the palette should be reversed.
+#' @inheritParams scale_colour_RestPoLL
 #' @param ... Additional arguments passed to discrete_scale() or
 #'   scale_fill_gradientn(), used respectively when discrete is TRUE or FALSE.
 #' @import ggplot2

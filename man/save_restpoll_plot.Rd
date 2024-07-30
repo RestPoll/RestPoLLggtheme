@@ -48,11 +48,10 @@ A png file with a styled and updated ggplot chart. Also returns the
   plot object.
 }
 \description{
-Running this function with the plot name as variable will save your plot with
-some extra styling. It will add Arial as text font except the subtitle, which
-will be in Times New Roman. It will also left align your title, subtitle and
-source, add and optional RestPoLL logo in the top right, and save it to your
-specified location.
+Running this function with the plot name as variable will save your plot with some
+extra styling. It will add Arial as default text font. It will also left align your
+title, subtitle and source, add and optional RestPoLL logo in the top right, and save
+it to your specified location.
 }
 \details{
 The function is a modified version of a finalise_plot function from

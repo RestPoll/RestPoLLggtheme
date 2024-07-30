@@ -12,8 +12,8 @@
 \item{pkgname}{Not used}
 }
 \value{
-Load fonts for widows device and pdf device
+None. Load fonts for devices.
 }
 \description{
-Attach the installed fonts for this R session for the win and pdf devices.
+Attach the installed fonts for this R session for the different devices.
 }

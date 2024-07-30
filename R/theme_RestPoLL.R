@@ -1,11 +1,11 @@
 #' Add a RestPoLL Theme to ggplot2 Figures
 #'
-#' This function allows you to add the RestPoLL theme to your ggplot graphics.
+#' This function allows you to add the RestPoLL theme and colours to your ggplot graphics.
 #'
-#' @details \code{theme_RestPoLL} sets the theme for RestPoLL figures,
-#'   using the graphical profile colours in the figure plot area, gridline,
-#'   axis, facets etc. You can change the size and font family of the basic text, title and subtitle
-#'   directly in the theme function.
+#' @details \code{theme_RestPoLL} sets the theme for RestPoLL figures, using the graphical
+#'   profile colours in the figure plot area, gridline, axis, facets etc. You can change
+#'   the size and font family of the basic text, title and subtitle directly in the theme
+#'   function.
 
 #' @author Georg Andersson, Biodiversity, Lund University
 #' @usage theme_RestPoLL(base_size = 22, base_family = "Arial",
@@ -14,10 +14,11 @@
 #' @param base_size Font size for the basix text.
 #' @param base_family Font family for the basic text.
 #' @param title_size Font size of plot title.
-#' @param subtitle_size Font size of plot subtitle.
 #' @param title_family Font family for the titles. Including plot title, as
 #'   well as the facet strip titles. However, not for subtitle.
+#' @param subtitle_size Font size of plot subtitle.
 #' @param subtitle_family Font family for the subtitle.
+#'
 #' @return Returns the plot object made with your \link{ggplot2} functions but with the RestPoLL style.
 #' @keywords theme_RestPoLL
 #' @import ggplot2

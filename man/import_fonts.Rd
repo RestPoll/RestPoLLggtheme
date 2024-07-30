@@ -2,17 +2,16 @@
 % Please edit documentation in R/import_RestPoLL_fonts.r
 \name{import_fonts}
 \alias{import_fonts}
-\title{Import Times New Roman and Arial fonts for use in charts}
+\title{Import Times New Roman, Arial, and Lora fonts for use in charts}
 \usage{
 import_fonts()
 }
 \description{
-These fonts are used when the AGaramondPro and FrutigerLTStd are not possible
-to use.
+These default fonts are Arial, however the Lora font is the recomended font for RestPoLL.
 }
 \note{
-You will need to load the fonts aswell with extrafont::loadfonts(),
-this is done automatically when using the save_poms_plot().This will take care of ensuring PDF/PostScript usage. The location of
+You should not need to load the fonts (e.g. with \code{extrafont::loadfonts()}).
+This should be done with the \code{showtext} package. The location of
 the font directory is displayed after the base import is complete. It is
 highly recommended that you install them on your system the same way you
 would any other font you wish to use in other programs.

@@ -9,7 +9,7 @@ theme_RestPoLL(base_size = 22, base_family = "Arial",
    subtitle_family = "Arial")
 }
 \arguments{
-\item{base_size}{Font size}
+\item{base_size}{Font size for the basix text.}
 
 \item{base_family}{Font family for the basic text.}
 
@@ -23,16 +23,16 @@ well as the facet strip titles. However, not for subtitle.}
 \item{subtitle_family}{Font family for the subtitle.}
 }
 \value{
-Returns the plot object made with your \link{ggplot2} functions but styled for Pollinator monitoring at LU
+Returns the plot object made with your \link{ggplot2} functions but with the RestPoLL style.
 }
 \description{
-This function allows you to add the RestPoLL theme to your ggplot graphics.
+This function allows you to add the RestPoLL theme and colours to your ggplot graphics.
 }
 \details{
-\code{theme_RestPoLL} sets the theme for RestPoLL figures,
-  using the graphical profile colours in the figure plot area, gridline,
-  axis, facets etc. You can change the size and font family of the basic text, title and subtitle
-  directly in the theme function. The article theme is pre-set to suit articles with a bold title in bronze colour.
+\code{theme_RestPoLL} sets the theme for RestPoLL figures, using the graphical
+  profile colours in the figure plot area, gridline, axis, facets etc. You can change
+  the size and font family of the basic text, title and subtitle directly in the theme
+  function.
 }
 \examples{
    library(ggplot2)
@@ -41,7 +41,7 @@ This function allows you to add the RestPoLL theme to your ggplot graphics.
    p1 <- ggplot(diamonds, aes(carat, price, color = color)) +
      geom_point() +
      facet_wrap(~cut) +
-     labs(title = "Test of the Lund theme", subtitle = "I hope it works well")
+     labs(title = "Test of the RestPoLL theme", subtitle = "I hope it works well")
 
    p1 + theme_RestPoLL()
 
@@ -52,4 +52,4 @@ This function allows you to add the RestPoLL theme to your ggplot graphics.
 \author{
 Georg Andersson, Biodiversity, Lund University
 }
-\keyword{theme_PoMS}
+\keyword{theme_RestPoLL}

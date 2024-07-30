@@ -1,7 +1,7 @@
 
 #' Load Fonts For the R Session
 #'
-#' Attach the installed fonts for this R session for the win and pdf devices.
+#' Attach the installed fonts for this R session for the different devices.
 #'
 #' @param libname Not used
 #' @param pkgname Not used
@@ -9,7 +9,7 @@
 #' @import grDevices
 #' @import showtext
 #'
-#' @return Load fonts for devices.
+#' @return None. Load fonts for devices.
 #'
 .onAttach <- function(libname, pkgname) {
     packageStartupMessage("Loading RestPoLLggtheme version: ", getNamespaceVersion('RestPoLLggtheme'), "\n\nLoading available fonts for this session.\n\nYou can install fonts from this package with:\n 'import_fonts()' - Arial, Times New Roman, and Lora\n\nYou can use them with e.g:\n theme_RestPoLL(base_family = 'Arial', title_family = 'Lora')")

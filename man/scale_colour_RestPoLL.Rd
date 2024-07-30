@@ -2,7 +2,7 @@
 % Please edit documentation in R/scale_colours_RestPoLL.R
 \name{scale_colour_RestPoLL}
 \alias{scale_colour_RestPoLL}
-\title{Color scale constructor for PoMS  colors}
+\title{Color Scale Constructor for RestPoLL Colors}
 \usage{
 scale_colour_RestPoLL(
   palette = "secondary",
@@ -12,8 +12,8 @@ scale_colour_RestPoLL(
 )
 }
 \arguments{
-\item{palette}{Character name of palette in LU_palettes ("main", "secondary",
-"both").}
+\item{palette}{Character name of palette in RestPoLL palettes ("main", "secondary",
+"both"). Show colours of the palettes with `RestPoLL_pal()`.}
 
 \item{discrete}{Boolean indicating whether color aesthetic is discrete or
 not.}
@@ -24,16 +24,14 @@ not.}
 scale_color_gradientn(), used respectively when discrete is TRUE or FALSE}
 }
 \description{
-Color scale constructor for PoMS  colors
+Color Scale Constructor for RestPoLL Colors
 }
 \details{
-The palette is made up of the different colors from the graphical profile of Lund university. The choices are:
+The palette is made up of the different colors from the graphical profile of
+  the RestPoLL project. The choices are:
 \itemize{
    \item main - the main blue and bronze colours (can be used for first and secondary headings).
    \item secondary - the colours that are not main or grey.
    \item both - both the main and secondary colours.
-   \item grey - The grey colours used by Lund university (mainly for headings and, ingress and main texts)
-   \item dark - The blue, bronze and darker shade of grey.
-   \item all - Use all the colours (default).
  }
 }

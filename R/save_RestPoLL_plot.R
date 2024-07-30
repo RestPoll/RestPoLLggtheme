@@ -1,11 +1,10 @@
 
 #' Arrange, style and save the ggplot chart
 #'
-#' Running this function with the plot name as variable will save your plot with
-#' some extra styling. It will add Arial as text font except the subtitle, which
-#' will be in Times New Roman. It will also left align your title, subtitle and
-#' source, add and optional RestPoLL logo in the top right, and save it to your
-#' specified location.
+#' Running this function with the plot name as variable will save your plot with some
+#' extra styling. It will add Arial as default text font. It will also left align your
+#' title, subtitle and source, add and optional RestPoLL logo in the top right, and save
+#' it to your specified location.
 #'
 #'
 #' @param save_filepath Exact file-path that you want the plot to be saved to,
