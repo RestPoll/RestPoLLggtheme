@@ -54,7 +54,7 @@ For known issues see **Known Issues** below.
         geom_point(size = 3)  +
         scale_colour_RestPoLL() +
         labs(title = "RestPoLL plot", subtitle = "SUBTITLE IN ALL CAPS") +
-        theme_RestPoLL(title_font = "Lora", sub_title_font = "Lora")
+        theme_RestPoLL(title_family = "Lora", subtitle_family = "Lora")
         
     save_restpoll_plot("Iris_plot.png", RestPoLL_logo = "RestPoLL.png")
 

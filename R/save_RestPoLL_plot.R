@@ -55,7 +55,7 @@
 #'              source_name = "Source: The source for my data",
 #'              width = 9,
 #'              height = 6,
-#'              logo_image_path = "my_logo.png",
+#'              logo_image_path = "EU-flag.png",
 #'              RestPoLL_logo = "Restpoll.png")
 #'
 #'library(ggplot2)
